@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+int main(void)
+
+{
+
+int N,k;
+
+float s,t,sig,q;
+
+s=0.0;
+
+t=1.0;
+
+printf("write N\n");
+
+scanf("%d",&N);
+
+sig=q=1;
+
+for(k=1; k<=N; k++)
+
+{
+
+s=s+t;
+
+q=q*2.0;
+
+sig=sig*(-1.0);
+
+t= (sig*(k))/q;
+
+}
+
+printf("summ is: %f",s);
+
+return 0;
+
+}
