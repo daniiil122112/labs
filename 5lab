@@ -1,0 +1,73 @@
+#include<stdio.h>
+
+#include<time.h>
+
+#include<stdlib.h>
+
+#define MAX 10
+
+main()
+
+{
+
+float Sp,So;
+
+float m[MAX];
+
+int max,min,i,posmax,posmin;
+
+srand(time(NULL));
+
+for(i=0;i<MAX;i++)
+
+{
+
+m[i]=(rand()%100);
+
+printf("%f\t",m[i]);
+
+}
+
+printf("\n");
+
+max=-1000;
+
+min=1000;
+
+for(i=0;i<MAX;i++)
+
+{
+
+if(m[i] > max)
+
+{
+
+max = m[i];
+
+posmax = i;
+
+}
+
+if(m[i]<min)
+
+{
+
+min = m[i];
+
+posmin = i;
+
+}
+
+}
+
+m[posmin] = max;
+
+m[posmax] = min;
+
+for(i=0;i<MAX;i++)
+
+printf("%f\t",m[i]);
+
+return 0;
+
+}
