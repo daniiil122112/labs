@@ -24,7 +24,7 @@ main()
          if (F == 1)
          {
            wlen=i-pos;
-          if(prv(str,pos,i)==0 && (str[pos]=='a' || str[pos]=='i' || str[pos]=='u' || str[pos]=='y' || str[pos]=='e' || str[pos]=='o' ))
+          if(prv(str,pos,i)==0 && (str[pos]=='a' || str[pos]=='i' || str[pos]=='u' || str[pos]=='y' || str[pos]=='e' || str[pos]=='o'(str[pos]=='A' || str[pos]=='I' || str[pos]=='U' || str[pos]=='Y' || str[pos]=='E' || str[pos]=='O' ))
          {
           for (k = pos; k <= l; k++)
                str[k]=str[k+wlen];
