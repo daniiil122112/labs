@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#define N 10
+#define K 10
+main()
+{
+	int S[N][K];
+	int i,j,min,posmin;
+	srand(time(NULL));
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<K;j++)
+		{
+			S[i][j]=(rand()%10);
+			printf("%d ",S[i][j]);
+		}
+	printf("\n");
+	}
+	min=S[1][1];
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<K;j++)
+		{
+			if(S[i][j]<min)
+			{
+			 min= S[i][j];
+			 posmin = i;
+			}
+		}
+	}
+	printf("\n%d	%d<==min\n",min,posmin);
+	for(i = posmin+1 ;i < N; i++)
+			{
+				for(j=0;j<K;j++)
+					S[i][j]=0;
+			}
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<K;j++)
+			printf("%d ",S[i][j]);
+		printf("\n");
+	}
+	return 0;
+}
