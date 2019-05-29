@@ -13,6 +13,14 @@ main()
 		if((mask_1 & N)==0 || (mask_2 & N)==0)
 		{
 			if((mask_1 & N)==0 && (mask_2 & N)!=0)
+			{
+				N&= (~mask_2);
+				N|=mask_1;
+			}
+			else if((mask_2 & N)==0 && (mask_1 & N)!=0)
+			{
+				N&=(~mask_1);
+				N|=mask_2;
 			}
 		}
 		mask_1>>=1;
