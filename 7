@@ -1,0 +1,39 @@
+#include <stdio.h>
+int lengt(int a);
+main()
+{
+ unsigned int mask_1,mask_2;
+	int i=0,N,l;
+	scanf("%d",&N);
+	l=lengt(N)-1;
+	mask_2=mask_1=0x1;
+	mask_1<<=l;
+	for(i=0; i < l/2+1; i++)
+	{
+		if((mask_1 & N)==0 || (mask_2 & N)==0)
+		{
+			if((mask_1 & N)==0 && (mask_2 & N)!=0)
+			}
+		}
+		mask_1>>=1;
+		mask_2<<=1;
+	}
+		for(i=0; N!=0; i++)
+	{
+		printf("%d",N%2);
+		N/=2;
+	}
+	printf("\n\n");
+	return 0;
+}
+lengt(int num)
+{
+	int i;
+	for(i=0; num!=0; i++)
+	{
+		printf("%d",num%2);
+		num=num/2;
+	}
+	printf("\n\n");
+	return i;
+}
