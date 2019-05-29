@@ -1,10 +1,12 @@
 #include <stdio.h>
 int lengt(int a);
+void binary_print(long a);
 main()
 {
  unsigned int mask_1,mask_2;
 	int i=0,N,l;
 	scanf("%d",&N);
+	binary_print(N);
 	l=lengt(N)-1;
 	mask_2=mask_1=0x1;
 	mask_1<<=l;
@@ -26,11 +28,7 @@ main()
 		mask_1>>=1;
 		mask_2<<=1;
 	}
-		for(i=0; N!=0; i++)
-	{
-		printf("%d",N%2);
-		N/=2;
-	}
+	binary_print(N);
 	printf("\n\n");
 	If(N==0)
 		printf("0\n");
@@ -42,10 +40,22 @@ lengt(int num)
 {
 	int i;
 	for(i=0; num!=0; i++)
-	{
-		printf("%d",num%2);
 		num=num/2;
-	}
-	printf("\n\n");
 	return i;
+}
+void binary_print(long a)
+{
+	unsigned mask = 0x80000000;
+	printf("binary number: ");
+	for (int i = 1; i <= (sizeof(a) * 8); i++)
+	{
+		if (a & mask)
+			printf("1");
+		else
+			printf("0");
+		if ((i % 8) == 0)
+			printf(" ");
+		mask = mask>>1;
+	}
+	printf("\n");
 }
